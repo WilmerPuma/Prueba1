@@ -2,3 +2,49 @@
 - name: Correr mis tareas
   hosts: evaluacion
   become: yes
+  
+     tasks: 
+-name: Imprimir host
+    debug: msg="{{ ansible-host }}"
+
+    - hosts: obtener la version de windows
+  gather_facts: yes
+  become: false
+  tasks:
+  - name: Distribution
+    debug: msg="{{ ansible_distribution }}"
+
+- name: Install the Visual c
+  win_package:
+
+- name: Crea un directorio 
+  file:
+    path: /tmp/reto1
+    state: directory
+    mode: '0755'
+
+
+- name: Crea Archivo reto1_content
+  file:
+    path: /tmp/reto1/ reto1_content
+    state: file
+
+
+
+- name: Actulizar todos los paquetes del servidor 
+  win_updates:
+    category_names:
+      - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
+
+- name: Reiniciar el servidor
+  win_reboot:
+  when: res.reboot_required
+
+- name: Cambiar hostname maquina
+  win_hostname:
+    name: sample-hostname
+  register: res
+  
+  
