@@ -1,0 +1,6 @@
+---
+- name: Crea un directorio si este no existe
+  file:
+    path: /etc/some_directory
+    state: directory
+    mode: '0755'
