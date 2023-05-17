@@ -1,4 +1,4 @@
 ---
-- name: Apache server installed
-  hosts: node1
+- name: Correr mis tareas
+  hosts: evaluacion
   become: yes
